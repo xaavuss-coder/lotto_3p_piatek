@@ -9,14 +9,23 @@ int liczba = random.Next(1, 100);
 
 Console.WriteLine("Zgadnij wylosowaną liczbę");
 
-Console.WriteLine("Podaj LIczbę z zakresu 1 do 100");
-int zgadywana = int.Parse(Console.ReadLine());
+Console.WriteLine("Podaj Liczbę z zakresu 1 do 100");
 
-if (zgadywana == liczba)
-{
-    Console.WriteLine("Zgadnięto");
+for (int i = 0; i < 10; i++) {
+    int zgadywana = int.Parse(Console.ReadLine());
+
+    if (zgadywana == liczba)
+    {
+        Console.WriteLine("Zgadnięto");
+        break;
+    }
+    if (zgadywana < liczba)
+    {
+        Console.WriteLine("Za mało!");
+    }
+    else
+    {
+        Console.WriteLine("Za dużo!");
+    }
 }
-else
-{
-    Console.WriteLine("Może innym razem");
-}
+
