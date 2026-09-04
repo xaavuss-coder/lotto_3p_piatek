@@ -12,3 +12,4 @@ C:\Users\egzamin\source\repos\lotto_piatek\lotto_piatek\obj\Debug\net10.0\refint
 C:\Users\egzamin\source\repos\lotto_piatek\lotto_piatek\obj\Debug\net10.0\lotto_piatek.pdb
 C:\Users\egzamin\source\repos\lotto_piatek\lotto_piatek\obj\Debug\net10.0\lotto_piatek.genruntimeconfig.cache
 C:\Users\egzamin\source\repos\lotto_piatek\lotto_piatek\obj\Debug\net10.0\ref\lotto_piatek.dll
+C:\Users\egzamin\source\repos\lotto_piatek\lotto_piatek\obj\Debug\net10.0\lotto_piatek.sourcelink.json
