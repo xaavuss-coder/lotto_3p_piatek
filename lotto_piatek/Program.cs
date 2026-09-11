@@ -89,3 +89,26 @@ List<int> wylosujListe(int ileLiczb)
 
 List<int> wyloswaneLiczby = wylosujListe(5);
 wypisz2(wyloswaneLiczby);
+
+List<int> losujLiczbyBezPowtorzen(int ileLiczb)
+{
+    List<int> listaBezPowtorzen = new List<int>();
+    Random random = new Random();
+    int liczba;
+
+
+    for (int i = 0; i < ileLiczb; i++)
+    {
+        liczba = random.Next(1, 51);
+
+        while (listaBezPowtorzen.Contains(liczba))
+        {
+            liczba = random.Next(1, 51);
+        }
+    }
+    return listaBezPowtorzen;
+}
+
+List<int> listaBezPowtorzen = losujLiczbyBezPowtorzen(10);
+Console.WriteLine("Lista bez powtorzen");
+wypisz2(listaBezPowtorzen);
