@@ -1,27 +1,91 @@
-﻿Console.WriteLine("Wylosowanie Liczby");
-// wylosuj liczbe w zakrseise od 1 do 99
-
-Random random = new Random();
-
-int liczba = random.Next(1, 100);
-
-// Console.WriteLine("Wyloswana liczba: " + liczba);
-
-Console.WriteLine("Zgadnij wylosowaną liczbę");
-
-Console.WriteLine("Podaj Liczbę z zakresu 1 do 100");
-int zgadywana = int.Parse(Console.ReadLine());
-
-while (zgadywana != liczba)
+﻿void losowaniePojedyncze()
 {
-    if (zgadywana < liczba)
+
+    Console.WriteLine("Losowanie liczby");
+    //Wylosuj liczbę z zakresu 1..49
+
+    Random random = new Random();
+
+    int liczba = random.Next(1, 50);
+    //Console.WriteLine("wylosowana liczba "+liczba);
+
+    Console.WriteLine("Zgadnij wylosowaną liczbę");
+
+
+
+    for (int i = 0; i < 10; i++)
     {
-        Console.WriteLine("Za mało!");
+        Console.WriteLine("podaj liczbę z zakresu 1..49");
+        int zgadywana = int.Parse(Console.ReadLine());
+        if (zgadywana == liczba)
+        {
+            Console.WriteLine("Zgadnięto");
+            break;
+        }
+        if (zgadywana < liczba)
+        {
+            Console.WriteLine("Wpisano za mało");
+        }
+        else
+        {
+            Console.WriteLine("Wpisano za dużo");
+        }
     }
-    else {
-        Console.WriteLine("Za dużo!");
+}
+
+//losowaniePojedyncze();
+
+void wypisz(int[] tablicaDowypisania)
+{
+    for (int i = 0; i < tablicaDowypisania.Length; i++)
+    {
+        Console.Write(tablicaDowypisania[i] + ";");
+    }
+}
+
+
+//przeciazanie funckji lokalnej NIE MA!
+
+
+void wypisz2(List<int> listaDoWypisania)
+{
+    foreach(int element in listaDoWypisania)
+    {
+        Console.WriteLine(element);
+    }
+}
+
+void wylosujKilkaLiczb(int ileLiczb)
+{
+    int[] liczbyLosowe = new int[ileLiczb];
+    //tablice zawsz mają określony rozmiar podczas działania
+    //programu nie można go zmienić
+    Random random = new Random();
+    for (int i = 0; i < ileLiczb; i++)
+    {
+        liczbyLosowe[i] = random.Next(1, 50);
     }
 
-    Console.WriteLine("Podaj Liczbę z zakresu 1 do 100");
-    zgadywana = int.Parse(Console.ReadLine());
+    //wypisywanie testowe
+    wypisz(liczbyLosowe);
+
 }
+wylosujKilkaLiczb(7);
+
+
+List<int> wylosujListe(int ileLiczb)
+{
+    List<int> losowe = new List<int>();
+    int liczba;
+    Random random = new Random();
+
+    for (int i = 0; i < ileLiczb; i++)
+    {
+        liczba = random.Next(1, 51);
+        losowe.Add(liczba);
+    }
+    return losowe;
+}
+
+List<int> wyloswaneLiczby = wylosujListe(5);
+wypisz2(wyloswaneLiczby);
